@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>String Methods</title>
+    <style>
+        div{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            width:30%;
+        }
+        #demo,#demo1,#demo2,#demo3,#demo4,#demo5{
+            font-size: 1.5em;
+        }
+    </style>
+</head>
+<body>
+    <div>
+    <button onclick="toclick()">Click To convert Uppercase</button><br><br>
+    <p id ="demo"></p>
+    <button onclick="tolowercase()">Click To convert Lowercase</button><br><br>
+    <p id ="demo1"></p>
+    <button onclick="toreverse()">Click To Reverse the string</button><br><br>
+    <p id="demo2"></p>
+    <button onclick="tovalidate()">Click for username validation</button><br><br>
+    <p id="demo3"></p>
+    <button onclick="toemail()">Click for Email formatter</button><br><br>
+    <p id="demo4"></p>
+    <button onclick="toword()">Click for word count</button><br><br>
+    <p id="demo6"></p>
+    <button onclick="topalindrome()">Click to check palindrome or not</button><br><br>
+    <p id="demo5"></p>
+    </div>
+    
+    
+    <script>
+        function upper(){
+            let a =prompt("Enter any word: ")
+            let res= a.toUpperCase();
+            return res;
+        }
+        function toclick(){
+            document.getElementById("demo").innerHTML=upper();
+        };
+        function lower(){
+            let a =prompt("Enter any word: ")
+            let res= a.toLowerCase();
+            return res;
+        }
+        function tolowercase(){
+            document.getElementById("demo1").innerHTML=lower();
+        };
+        function Reverse(){
+            let a =prompt("Enter any sentence: ")
+            res=""
+            for(let i=a.length-1;i>=0;i--){
+                res+=a[i]
+            }
+            return res;
+        }
+        function toreverse(){
+            document.getElementById("demo2").innerHTML=Reverse();
+        };
+        function validate(){
+            let a =prompt("Enter username: ")
+            if (a.length >= 5 && a.length <=15){
+                return "The username is valid";
+            }
+            else{
+                return "The username is not valid";
+            }
+        }
+        function tovalidate(){
+            document.getElementById("demo3").innerHTML=validate();
+        };
+        function format(){
+            let a =prompt("Enter firstname: ")
+            let b =prompt("Enter lastname: ")
+            res="";
+            res=a.toLowerCase()+"."+b.toLowerCase()+"@gmail.com";
+            return res;
+        }
+        function toemail(){
+            document.getElementById("demo4").innerHTML=format();
+        };
+        function palin(){
+            let a =prompt("Enter string: ")
+            res=""
+            for(let i = a.length-1;i>=0;i--){
+                res+=a[i]
+            }
+            if (res==a){
+                return "It is a palindrome";
+            }
+            else{
+                return "It is Not a palindrome";
+            }
+        }
+        function topalindrome(){
+            document.getElementById("demo5").innerHTML=palin();
+        };
+        function word(){
+            let a =prompt("Enter firstname: ")
+            let res=a.split(" ").length;
+            return res
+        }
+        function toword(){
+            document.getElementById("demo6").innerHTML=word();
+        };
+
+
+    </script>
+
+</body>
+</html>
